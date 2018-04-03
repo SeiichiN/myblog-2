@@ -1,0 +1,93 @@
+@charset "utf-8";
+
+/* ===== 共通設定 ===== */
+* {                      /* すべての要素のマージンとパディングをゼロにする */
+  margin: 0;
+  padding: 0;
+}
+ul {                      /* リストの黒丸をなしにする */
+  list-style-type: none;
+}
+a {                       /* リンクの下線をなしにする */
+  text-decoration: none;
+}
+img {                    /* 画像の下に出る余白をなしにする */
+  vertical-align: bottom;
+}
+.clearfix:after {     /* フロートの処理 */
+  content: "";
+  display: block;
+  clear: both;
+}
+body {
+  font-family: 'メイリオ', 'Hiragino Kaku Gothic Pro', sans-serif;
+  color: #444;            /* 文字は真っ黒よりも、少し薄いほうがいい？ */
+}
+#wrap {
+  width: 800px;           /*  bodyの中にボックスをつくり、幅を800pxにして中央寄せ */
+  margin: 0 auto;
+}
+
+/* ===== manageBlog.php ===== */
+.manageBlog .id {
+  float: right;
+}
+.manageBlog .date {
+  float: right;
+  font-size: 0.8em;
+}
+.manageBlog .category,
+.manageBlog .tag {
+  float: left;
+  font-size: 0.8em;
+}
+.manageBlog .category {
+  margin-right: 10px;
+}
+.manageBlog:nth-child(odd) {      /* 奇数 */
+  background-color: #e4d8e8;
+}
+.manageBlog:nth-child(even) {      /* 偶数 */
+  background-color: beige;
+}
+.magageBlog {
+  padding: 5px;
+}
+.manageBlog .title a {
+    color: #444;
+}
+.manageBlog .title a:hover {
+    color: #888;
+}
+
+/* ======================= showBlog.php ============================= */
+.single-page {
+    position: relative;     /* .messageをこの中の右上に表示させる */
+    width: 610px;           /* 特に根拠はありません */
+}
+.single-page h3 {
+    font-size: 1em;
+    font-weight: normal;
+}
+.single-page h1 {
+    width: 600px;
+    font-size: 1.2em;
+    border-left: solid 10px #aaa;
+    padding-left: 10px;
+    margin-bottom: 5px;
+}
+.single-page .body {
+    width: 600px;
+    min-height: 400px;
+    border: solid 1px #aaa;
+    margin-bottom: 5px;
+}
+.single-page .date {
+    float: right;
+}
+.single-page .message {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    color: lightgreen;
+}
