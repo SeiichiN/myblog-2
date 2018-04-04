@@ -13,7 +13,7 @@
         <div id="wrap">
             <header>
                 <h1><a href="manageBlog.php">MyBlog</a></h1>
-                <!-- <div class="newBlog"><a href="newBlog.php">[ NEW ]</a></div> -->
+                <div class="newBlog"><a href="newBlog.php">[ NEW ]</a></div>
 	            <?php // require_once('findBlog.php'); ?>
             </header>
             <article>

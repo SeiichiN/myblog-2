@@ -9,11 +9,11 @@ if (!empty($_POST['tag'])) { $tag = $_POST['tag']; $okcount++; }
 if (!empty($_POST['date'])) { $date = $_POST['date']; $okcount++; }
 
 // okcountが5ということは、すべての変数がセットできたということ。
-if ($occount === 5) {
+if ($okcount === 5) {
 	// データベースに接続
-	$db = newDB();
+	$db = getDB();
 	// prepareという方法でデータをセット。セイキュリティと正確さのため。推奨
-	$query = "insert into " . TABLENAME . " (table, body, category, tag) values (?, ?, ?, ?, ?)";
+	$query = "insert into " . TABLENAME . " (title, body, date, category, tag) values (?, ?, ?, ?, ?)";
 	$stmt = $db->prepare($query);
 	$stmt->bindValue(1, $title, SQLITE3_TEXT);
 	$stmt->bindValue(2, $body, SQLITE3_TEXT);
