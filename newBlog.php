@@ -4,7 +4,7 @@ require_once('mylib.php');
 require_once('header.php');
 ?>
 <h1 class="newBlog-h1">新規作成</h1>
-<form action="" method="post">
+<form action="insertBlog.php" method="post">
     <label for="form-title">タイトル:</label><br>
     <input type="text" name="title" id="form-title" require value="<?php echo h($title); ?>"><br>
 
