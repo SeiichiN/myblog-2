@@ -31,7 +31,6 @@ require_once('header.php');
     <div class="date">作成：<?php echo h($date); ?></div>
     <div class="category">カテゴリ：<?php echo h($category); ?></div>
     <div class="tag">タグ：<?php echo h($tag); ?></div>
-    <div class="message"><?php echo $msg; ?></div>
 </div><!-- .single-page -->
 
 <?php require_once('footer.php'); ?>

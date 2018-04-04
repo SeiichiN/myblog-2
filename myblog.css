@@ -62,7 +62,6 @@ body {
 
 /* ======================= showBlog.php ============================= */
 .single-page {
-    position: relative;     /* .messageをこの中の右上に表示させる */
     width: 610px;           /* 特に根拠はありません */
 }
 .single-page h3 {
@@ -85,9 +84,44 @@ body {
 .single-page .date {
     float: right;
 }
-.single-page .message {
-    position: absolute;
-    top: 0;
-    right: 10px;
-    color: lightgreen;
+.single-page .id {
+	float: right;
+}
+
+/* ============== newBlog.php ====================== */
+.newBlog-h1 {
+    font-size: 1em;
+}
+.newBlog-h1:before {
+    content: "---// ";
+}
+.newBlog-h1:after {
+    content: " //---";
+}
+#form-title {
+    width: 600px;
+}
+#form-body {
+    width: 600px;
+    height: 400px;
+}
+#form-category {
+    width: 200px;
+}
+#form-tag {
+    width: 400px;
+}
+#form-submit {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+#form-cancel {
+    display: inlene-block;
+}
+#form-cancel button {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
 }
