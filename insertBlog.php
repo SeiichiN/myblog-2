@@ -22,9 +22,10 @@ if ($okcount === 5) {
 	$stmt->bindValue(5, $tag, SQLITE3_TEXT);
 	$stmt->execute();
 	$msg = "登録しました。";
-	$query = "select id from " . TABLENAME . " where rowid = last_insert_rowid()";
-    $result = $db->query($query);
-    var_dump($result);
+	$query = "select id from " . TABLENAME . " where id = (select max(id) from " . TABLENAME . ")";
+    $stmt = $db->prepare($query);
+    $id = $stmt->execute();
+    var_dump($id);
 
 	$db->close();
 } else {
