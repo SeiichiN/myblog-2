@@ -22,16 +22,18 @@ if ($okcount === 5) {
 	$stmt->bindValue(5, $tag, SQLITE3_TEXT);
 	$stmt->execute();
 	$msg = "登録しました。";
-	$query = "select id from " . TABLENAME . " where id = (select max(id) from " . TABLENAME . ")";
-    $stmt = $db->prepare($query);
-    $id = $stmt->execute();
-    var_dump($id);
-
+//	$query = "select id from " . TABLENAME . " where id = (select max(id) from " . TABLENAME . ")";
+	// $query = "select max(id) from " . TABLENAME ;
+	$query = "select id from " . TABLENAME . " where rowid = last_insert_rowid()";
+    $result = $db->query($query);
+	if ($row = $result->fetchArray()) {
+		$id = $row['id'];
+	}
 	$db->close();
 } else {
 	$msg = "未入力の項目があったので、データベースには登録しませんでした。";
 }
-require_once('header.php');
+header("Location: showBlog.php?id={$id}");
 
 
 ?>
