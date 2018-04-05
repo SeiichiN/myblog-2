@@ -19,12 +19,14 @@ if (!empty($_GET['id'])) {
 	}
 	$db->close();
 }
-$msg = "更新しました。";
+// $msg = "更新しました。";
 
 require_once('header.php');
 ?>
 
 <div class="single-page">
+	<div class="editThis">
+        <a href="editBlog.php?id=<?php echo $id; ?>">[EDIT]</a></div>
     <div class="id">id:<?php echo $id; ?></div>
     <h1 class="title"><?php echo h($title); ?></h1>
     <div class="body"><?php echo h($body); ?></div>
