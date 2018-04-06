@@ -26,7 +26,8 @@ require_once('header.php');
 
 <div class="single-page">
 	<div class="editThis">
-        <a href="newBlog.php?id=<?php echo $id; ?>">[EDIT]</a></div>
+        <a href="newBlog.php?id=<?php echo $id; ?>">
+        	<img src="img/pencil.png" alt="EDIT"></a></div>
     <div class="id">id:<?php echo $id; ?></div>
     <h1 class="title"><?php echo h($title); ?></h1>
     <div class="body"><?php echo h($body); ?></div>

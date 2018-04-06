@@ -38,6 +38,8 @@ require_once('header.php');
 ?>
 <h1 class="newBlog-h1"><?php echo $wordTitle; ?></h1>
 <form action="<?php echo $wordAction; ?>" method="post">
+	<input type="hidden" name="id" value="<?php echo $id; ?>">
+	
     <label for="form-title">タイトル:</label><br>
     <input type="text" name="title" id="form-title" require value="<?php echo h($title); ?>"><br>
 
