@@ -31,7 +31,7 @@ if ($okcount === 5) {
 } else {
 	$msg = "未入力の項目があったので、データベースには登録しませんでした。";
 }
-header("Location: showBlog.php?id={$id}");
-
+header("Location: showBlog.php?id={$id}&msg={$msg}");
+exit();
 
 ?>

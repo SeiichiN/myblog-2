@@ -1,24 +1,3 @@
-<?php
-
-define (DBNAME, 'blog.db');
-define (TABLENAME, 'blog');
-
-function h ($str) {
-	return htmlspecialchars($str, ENT_QUOTES, "UTF-8");
-}
-
-/**
- * 関数名 -- getDB
- * はたらき -- データベースへの接続をこの関数に一本化する。
- *           そのことにより、ほかのデータベースに変更したり、
- *           データベースへの接続を変更したりすることに対応する。
- * 戻り値 -- $db（データベース・オブジェクト）
- */
-function getDB() {
-	$db = new SQLite3(DBNAME);
-	return $db;
-}
-
 /**
  * unEscMark:
  *    Markdown記法のために、htmlspecialchars関数を一部無効にする。
@@ -30,6 +9,7 @@ function getDB() {
  *             phpinfo();
  *         ?>
  *         ```                <== 無効のおわり
+ *    
  *    「>」は、どこであっても、htmlspecialchars関数を無効にする。
  *
  * Usage:
@@ -100,4 +80,3 @@ function unEscMark($str) {
 	}
 	return implode($newStr);  // 配列を文字列に変換して返す
 }
-

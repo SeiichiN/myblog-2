@@ -1,0 +1,58 @@
+/*
+   mymarkdown.css
+
+   original --> markdown.jp.css ( https://github.com/markdown-ja/markdown.jp )
+ */
+blockquote {
+  padding: 10px 20px;
+  margin: 0 0 20px;
+  border-left: 5px solid #eeeeee;
+}
+
+blockquote p {
+  font-weight: 300;
+  line-height: 1.25;
+}
+
+blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+
+code,
+pre {
+  font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+}
+
+code {
+  padding: 2px 4px;
+  font-size: 90%;
+  color: #c7254e;
+  white-space: nowrap;  /* 連続する半角スペース・改行を1つの半角スペースとして表示 */
+  background-color: #f9f2f4;
+  border-radius: 4px;
+}
+
+pre {
+  display: block;
+  padding: 9.5px;
+  margin: 0 0 10px;
+  font-size: 13px;
+  line-height: 1.428571429;
+  color: #333333;
+  word-break: break-all;  /* 改行指定 日本語の単語の途中で改行を許可 */
+  word-wrap: break-word;  /* 改行指定 欧文の単語の途中で改行を許可 */
+  background-color: #f5f5f5;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+}
+
+pre code {
+  padding: 0;
+  font-size: inherit;
+  color: inherit;
+  white-space: pre-wrap;  /* 連続する半角スペース・改行をそのまま表示 */
+  background-color: transparent;  /* 背景色を透明にする */
+  border: 0;
+}
+

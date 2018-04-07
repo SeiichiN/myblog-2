@@ -28,6 +28,6 @@ if ($okcount === 6) {
 	$msg = "未入力の項目があったので、更新しませんでした。";
 }
 
-header("Location: showBlog.php?id={$id}");
-
+header("Location: showBlog.php?id={$id}&msg={$msg}");
+exit();
 ?>

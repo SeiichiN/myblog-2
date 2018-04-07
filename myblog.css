@@ -5,11 +5,15 @@
   margin: 0;
   padding: 0;
 }
-ul {                      /* リストの黒丸をなしにする */
-  list-style-type: none;
+ul {                      /* リストのパディングを20pxにして黒丸は表示 */
+    padding-left: 20px;
 }
 a {                       /* リンクの下線をなしにする */
-  text-decoration: none;
+    text-decoration: none;
+    color: #444;
+}
+a:hover {
+    color: #888;
 }
 img {                    /* 画像の下に出る余白をなしにする */
   vertical-align: bottom;
@@ -27,6 +31,9 @@ body {
   width: 800px;           /*  bodyの中にボックスをつくり、幅を800pxにして中央寄せ */
   margin: 0 auto;
 }
+p {
+    margin-bottom: 5px;
+}
 
 /* ================= ヘッダー ================= */
 header {
@@ -41,37 +48,45 @@ header .newBlog {
 header h1 {
     font-size: 1.5em;
 }
-
+header .msgbox {
+    position: absolute;
+    top: 6px;
+    left: 240px;
+    color: lightgreen;
+}
 /* ===== manageBlog.php ===== */
 .manageBlog .id {
-  float: right;
+    float: right;
+    display: none;
+}
+.manageBlog .trash {
+    float: right;
+}
+.manageBlog .trash button {
+    background: inherit;
+    border: none;
+    cursor: pointer;
 }
 .manageBlog .date {
-  float: right;
-  font-size: 0.8em;
+    float: right;
+    font-size: 0.8em;
 }
 .manageBlog .category,
 .manageBlog .tag {
-  float: left;
-  font-size: 0.8em;
+    float: left;
+    font-size: 0.8em;
 }
 .manageBlog .category {
-  margin-right: 10px;
+    margin-right: 10px;
 }
 .manageBlog:nth-child(odd) {      /* 奇数 */
-  background-color: #e4d8e8;
+    background-color: #e4d8e8;
 }
 .manageBlog:nth-child(even) {      /* 偶数 */
-  background-color: beige;
+    background-color: beige;
 }
 .magageBlog {
-  padding: 5px;
-}
-.manageBlog .title a {
-    color: #444;
-}
-.manageBlog .title a:hover {
-    color: #888;
+    padding: 5px;
 }
 
 /* ======================= showBlog.php ============================= */
@@ -105,15 +120,24 @@ header h1 {
 .single-page .editThis {
     float: right;
 }
+.single-page .editThis button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.single-page .editThis button:hover img {
+    opacity: 0.7;
+    width: 120%;
+}
 
-/* ============== newBlog.php ====================== */
-.newBlog-h1 {
+/* ============== inputBlog.php ====================== */
+.inputBlog-h1 {
     font-size: 1em;
 }
-.newBlog-h1:before {
+.inputBlog-h1:before {
     content: "---// ";
 }
-.newBlog-h1:after {
+.inputBlog-h1:after {
     content: " //---";
 }
 #form-title {
@@ -142,4 +166,20 @@ header h1 {
     width: 50px;
     height: 50px;
     cursor: pointer;
+}
+
+/* ==================== findBlog.php ====================== */
+.findword {
+    float: left;
+    margin-left: 2px;
+}
+.findBlog {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+.findBlog input[type="text"] {
+    height: 25px;
+    width: 200px;
+    margin-top: 3px;
 }

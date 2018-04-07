@@ -5,8 +5,21 @@ require_once('mylib.php');
 $db = getDB();          // blog.dbに接続
 $query = "select * from " . TABLENAME;          // テーブルblogからすべてのデータを読みだすクエリ文
 $result = $db->query($query);          // クエリ文を実行。$resultに読み込む。
-?>
-<?php
+
+// findBlogから検索ワードを受け取ったら
+if (!empty($_POST['findOf']) && !empty($_POST['word'])) {
+	$result = NULL;
+	$findOf = $_POST['findOf'];
+	$word = '%' . $_POST['word'] . '%';
+
+	$query = "select * from " . TABLENAME . " where $findOf like :word";
+	$stmt = $db->prepare($query);
+	$stmt->bindValue(':word', $word, SQLITE3_TEXT);
+	$result = $stmt->execute();
+}
+
+if (!empty($_GET['msg'])) { $msg = $_GET['msg']; }
+
 require_once('header.php');
 ?>
 <?php
@@ -16,6 +29,12 @@ require_once('header.php');
       ?>
         <section class="manageBlog clearfix">
           <div class="id">id:<?php echo $id; ?></div>
+		  <div class="trash">
+              <form action="deleteBlog.php" method="post" onSubmit="return kakunin()">
+                  <button type="submit" name="id" value="<?php echo $id; ?>">
+                      <img src="img/trash.png" alt="削除"></button>
+              </form>
+          </div>
           <h1 class="title">
               <a href="showBlog.php?id=<?php echo $id; ?>">
                   <?php echo h($blog['title']); ?></a></h1> <!-- titleを表示 -->
@@ -26,11 +45,7 @@ require_once('header.php');
         </section>
       <?php
       }
-      ?>
-      <?php
       require_once('footer.php');
-      ?>
 
-      <?php
 $db->close();          // データベースとの接続を解除する。
 ?>

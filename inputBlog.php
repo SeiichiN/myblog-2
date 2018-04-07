@@ -1,9 +1,9 @@
 <?php // newBlog.php
 require_once('mylib.php');
 
-if (!empty($_GET['id'])) {
+if (!empty($_POST['id'])) {
 	$mode = 'edit';
-	$id = (int)$_GET['id'];
+	$id = (int)$_POST['id'];
 	$db = getDB();
 	$query = "select * from " . TABLENAME . " where id = :id";
 	$stmt = $db->prepare($query);
@@ -36,7 +36,7 @@ elseif ($mode === 'edit') {
 
 require_once('header.php');
 ?>
-<h1 class="newBlog-h1"><?php echo $wordTitle; ?></h1>
+<h1 class="inputBlog-h1"><?php echo $wordTitle; ?></h1>
 <form action="<?php echo $wordAction; ?>" method="post">
 	<input type="hidden" name="id" value="<?php echo $id; ?>">
 	
