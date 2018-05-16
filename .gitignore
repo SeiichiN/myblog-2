@@ -2,3 +2,6 @@
 *.css~
 .~*.docx
 .htaccess~
+*.php#
+#*.*
+

@@ -1,6 +1,6 @@
 <Files ~ (inputBlog.php|deleteBlog.php)>
 AuthType      Basic
 AuthName    MembersOnly
-AuthUserFile   C:/xampp/htdocs/myblog-2/.htpasswd
+AuthUserFile   /home/se-ichi/public_html/php/myblog-2/.htpasswd
 require  valid-user
 </Files>
