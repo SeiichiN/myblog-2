@@ -1,7 +1,7 @@
 <?php
 
-define (DBNAME, 'blog.db');
-define (TABLENAME, 'blog');
+define ('DBNAME', 'blog.db');
+define ('TABLENAME', 'blog');
 
 function h ($str) {
 	return htmlspecialchars($str, ENT_QUOTES, "UTF-8");
@@ -98,6 +98,9 @@ function unEscMark($str) {
 		}
 		$k++;
 	}
-	return implode($newStr);  // 配列を文字列に変換して返す
+	if (is_array($newStr)) {
+		return implode($newStr);  // 配列を文字列に変換して返す
+	}
+	return $newStr;
 }
 

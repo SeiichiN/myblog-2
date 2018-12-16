@@ -1,7 +1,11 @@
 *.php~
 *.css~
 .~*.docx
-.htaccess~
+.ht*
 *.php#
 #*.*
+GPATH
+GRTAGS
+GTAGS
+tags
 
